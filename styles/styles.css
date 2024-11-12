@@ -1,0 +1,536 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --Montserrat: "Montserrat", sans-serif;
+  --primary: rgb(132, 23, 200);
+  --secondary: rgb(204, 9, 234, 0.3);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: var(--Montserrat);
+  scroll-behavior: smooth;
+  scroll-margin-top: 13rem;
+}
+
+a {
+  text-decoration: none;
+  color: #fafafa;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: rgb(132, 23, 200);
+}
+
+body {
+  overflow-x: hidden;
+  background-color: black;
+}
+
+.mainContainer {
+  width: 100%;
+  background-color: black;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logoImage {
+  height: 3rem;
+}
+
+.navigationContainer {
+  position: fixed;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 0;
+  z-index: 9;
+  backdrop-filter: blur(8px);
+  gap: 1rem;
+}
+
+.logoImageContainer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.itemList {
+  width: 100%;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.listItem {
+  color: #f2f2f2;
+}
+
+.heroContainer {
+  background: #0a0a0a;
+  position: absolute;
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  overflow-y: hidden;
+}
+
+.heroContainer::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 200%;
+  background-size: 50px 50px;
+  background-image: linear-gradient(
+      to right,
+      rgb(222, 222, 222) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, rgb(222, 222, 222) 1px, transparent 1px);
+  z-index: -2;
+  animation: 4s moveUp linear infinite;
+}
+
+.heroContainer::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: linear-gradient(to top, transparent 50%, black),
+    linear-gradient(to right, transparent 30%, black),
+    linear-gradient(to bottom, transparent 60%, black),
+    linear-gradient(to left, transparent 30%, black);
+  z-index: -1;
+}
+
+.heroTitle {
+  color: #fafafa;
+  font-family: var(--Montserrat);
+  font-weight: 800;
+  font-size: 25pt;
+}
+
+.typeWriter .heroTitle {
+  overflow: hidden;
+  border-right: 0.05em solid rgb(191, 0, 255);
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: 0.01em;
+  animation: typing 2s steps(25, end), blink-caret 0.75s step-end infinite;
+}
+
+.blankSpace {
+  position: relative;
+  width: 100%;
+  height: calc(80vh);
+}
+
+.teamsContainer {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  background-color: black;
+  gap: 2rem;
+  padding: 1rem 0;
+  z-index: 2;
+}
+
+.containerTitle {
+  color: #fafafa;
+  font-family: var(--Montserrat);
+  font-weight: 600;
+  font-size: 25pt;
+}
+
+.containerSubtitle {
+  color: #fafafa67;
+  font-family: var(--Montserrat);
+  font-weight: 400;
+  font-size: 10pt;
+}
+
+.cardsContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.teamCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: flex-start;
+  width: 280px;
+  height: 340px;
+  padding: 1rem;
+  background: rgb(6, 6, 6);
+  /* border: 2px solid #0a0a0a; */
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0;
+  transition: box-shadow 0.4s ease;
+}
+
+.teamCard:hover {
+  box-shadow: 0 0 20px rgb(204, 9, 234, 0.15);
+}
+
+.teamCard::before {
+  content: "";
+  position: absolute;
+  top: var(--mouse-y);
+  left: var(--mouse-x);
+  width: 2000px;
+  height: 2000px;
+  background: radial-gradient(
+    circle,
+    rgb(204, 9, 234, 0.3) 1%,
+    transparent 40%
+  );
+  border-radius: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.5s ease;
+}
+
+.teamCard::after {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  background: rgb(6, 6, 6, 0.5);
+  border-radius: 0.8rem;
+  opacity: 0;
+}
+
+.teamCard:hover::before,
+.teamCard:hover::after {
+  opacity: 1;
+}
+
+.teamName {
+  color: #fafafa;
+  font-size: 15pt;
+  z-index: 5;
+}
+
+.classSelectionContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.classSelect {
+  border: none;
+  width: 310px;
+  padding: 0.5rem 0;
+  border: 0.01rem solid #ffffff50;
+  color: #fff;
+  border-radius: 0.4rem;
+  background: transparent;
+  text-align: center;
+  backdrop-filter: blur(0.5rem);
+  appearance: none;
+}
+
+.classSelect option {
+  background-color: var(--background);
+  color: #000000;
+  padding: 1rem;
+}
+
+.classSelect option:hover,
+option:focus,
+option:active {
+  background-color: var(--background);
+  color: #000000;
+  padding: 1rem;
+}
+
+.promotionContainer {
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 3rem;
+}
+
+.textsWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  padding: 0 3rem;
+}
+
+.promotionButtonContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.promotionButton{
+  padding: 1.5rem 4rem;
+  background-color: #0a0a0a;
+  color: #bababa;
+  border: 1px solid #bababa;
+  border-radius: 1rem;
+  transition: all .2s ease;
+}
+
+.promotionButton:hover{
+  background-color: #3e1a7558;
+  color: #a600ff;
+  border: 1px solid #a600ff;
+  border-radius: 1rem;
+  transition: all .2s ease;
+}
+
+@media (min-width: 425px) {
+  .heroTitle {
+    font-size: 30pt;
+  }
+}
+
+@media (min-width: 768px) {
+  *{
+    scroll-margin-top: 5rem;
+  }
+  .mainContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logoImage {
+    height: 3rem;
+  }
+
+  .navigationContainer {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  .logoImageContainer {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 2rem;
+  }
+
+  .itemList {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 2rem;
+    gap: 3rem;
+  }
+
+  .heroContainer {
+    width: 100%;
+    height: 100vh;
+  }
+
+  .heroTitle {
+    font-size: 50pt;
+  }
+
+  .blankSpace {
+    height: calc(100vh);
+  }
+
+  .teamsContainer {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem 0;
+  }
+
+  .containerTitle {
+    font-size: 50pt;
+  }
+
+  .containerSubtitle {
+    font-size: 15pt;
+  }
+
+  .cardsContainer {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .teamCard {
+    width: 400px;
+    height: 450px;
+  }
+
+  .teamName {
+    color: #fafafa;
+    font-size: 20pt;
+  }
+
+  .classSelect {
+    width: 430px;
+  }
+
+  .classSelect option {
+    background-color: #000000;
+    color: #fafafa;
+    padding: 1rem;
+  }
+}
+
+@media (min-width: 991px) {
+  .mainContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logoImage {
+    height: 3rem;
+  }
+
+  .navigationContainer {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  .logoImageContainer {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 2rem;
+  }
+
+  .itemList {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 2rem;
+    gap: 3rem;
+  }
+
+  .heroContainer {
+    width: 100%;
+    height: 100vh;
+  }
+
+  .heroTitle {
+    font-size: 70pt;
+  }
+
+  .blankSpace {
+    height: calc(100vh);
+  }
+
+  .teamsContainer {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem 0;
+  }
+
+  .containerTitle {
+    font-size: 50pt;
+  }
+
+  .containerSubtitle {
+    font-size: 20pt;
+  }
+
+  .cardsContainer {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .teamCard {
+    width: 400px;
+    height: 450px;
+  }
+
+  .teamName {
+    color: #fafafa;
+    font-size: 20pt;
+  }
+
+  .classSelect {
+    width: 430px;
+  }
+
+  .classSelect option {
+    background-color: #000000;
+    color: #fafafa;
+    padding: 1rem;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: rgb(191, 0, 255);
+  }
+}
+
+@keyframes moveUp {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-150px);
+  }
+}
