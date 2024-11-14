@@ -341,6 +341,7 @@ option:active {
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
+    padding: 1rem 0;
   }
 
   .logoImageContainer {
