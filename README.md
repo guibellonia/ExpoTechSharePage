@@ -8,20 +8,20 @@ A **ExpoTechSharePage** é uma página web dinâmica e responsiva, desenvolvida 
 ## 🔧 Tecnologias Utilizadas:
 
 - **HTML5** 📄 - Estrutura semântica para criar o esqueleto da página.
-- **CSS3** 🎨 - Estilos avançados para personalizar o layout e as animações.
+- **CSS3** 🎨 - Estilos para personalizar o layout e as animações.
 - **JavaScript** ⚙️ - Funcionalidades interativas para uma navegação intuitiva.
 
 ---
 
 ## 📱 Responsividade:
 
-A página foi projetada com **design responsivo** para garantir uma ótima experiência em qualquer dispositivo, desde desktops até smartphones. A estrutura e os elementos ajustam-se automaticamente, mantendo a usabilidade e o visual consistente em telas de diferentes tamanhos.
+A página foi projetada com **design responsivo** para garantir uma boa experiência em qualquer dispositivo, desde desktops até smartphones. A estrutura e os elementos ajustam-se automaticamente, mantendo a usabilidade e o visual consistente em telas de diferentes tamanhos.
 
 ---
 
 ## 🎬 Animações em CSS:
 
-Utilizei **CSS puro** para criar animações suaves e atraentes. As animações ajudam a destacar os projetos e melhoram a experiência do usuário com transições leves e efeitos visuais que chamam a atenção para os elementos principais da página.
+Utilizei **CSS puro** para criar animações. As animações ajudam a destacar os projetos e melhoram a experiência do usuário com transições leves e efeitos visuais que chamam a atenção para os elementos principais da página.
 
 ---
 
