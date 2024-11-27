@@ -39,7 +39,7 @@ body {
 }
 
 .logoImage {
-  height: 3rem;
+  height: 2.3rem;
 }
 
 .navigationContainer {
@@ -349,9 +349,6 @@ option:active {
     align-items: center;
   }
 
-  .logoImage {
-    height: 3rem;
-  }
 
   .navigationContainer {
     flex-direction: row;
@@ -443,10 +440,6 @@ option:active {
   .mainContainer {
     flex-direction: column;
     align-items: center;
-  }
-
-  .logoImage {
-    height: 3rem;
   }
 
   .navigationContainer {
