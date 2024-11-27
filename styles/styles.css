@@ -185,7 +185,7 @@ body {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  justify-content: flex-start;
+  justify-content: space-between;
   width: 280px;
   height: 340px;
   padding: 1rem;
@@ -239,11 +239,27 @@ body {
   z-index: 5;
 }
 
+.developedBy{
+  color: #fafafa;
+}
+
+.teamDescription {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .1rem;
+  width: 100%;
+  text-align: center;
+  color: #fafafa75;
+  font-size: 8pt;
+  z-index: 5;
+}
+
 .classSelectionContainer {
   width: 100%;
   height: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
@@ -405,6 +421,11 @@ option:active {
   .teamName {
     color: #fafafa;
     font-size: 20pt;
+  }
+
+  .teamDescription {
+    font-size: 11.5pt;
+    z-index: 5;
   }
 
   .classSelect {
