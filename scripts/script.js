@@ -450,15 +450,6 @@ const teamsData = {
   ],
   5: [
     {
-      nome: "VoiceLocker",
-      integrantes: [
-        "Felipe Augusto Araujo de Siqueira",
-        "Guilherme Ântony Oliveira Santos",
-      ],
-      descricao:
-        "Projeto de biometria por voz, onde será utilizado o reconhecimento por voz como meio de segurança.",
-    },
-    {
       nome: "FAZER O BEM, OLHANDO A QUEM!",
       integrantes: ["Davi Peixoto", "David Mundim", "Isadora Hansen"],
       descricao:
